@@ -10,6 +10,8 @@
 package com.zerbling.core;
 
 import org.lwjgl.LWJGLException;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.ContextAttribs;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
@@ -42,6 +44,11 @@ public class Window {
 		try {
 			Display.setDisplayMode(new DisplayMode(width, height));
 			Display.create(new PixelFormat(), attribs);
+			
+			//We need to init the keyboard and mouse here
+			//It can work on some system without but on other system it don't -.-
+			Keyboard.create();
+			Mouse.create();
 		} catch (LWJGLException e) {
 			e.printStackTrace();
 		}
@@ -64,6 +71,8 @@ public class Window {
 	 */
 	public static void dispose() {
 		Display.destroy();
+		Keyboard.destroy();
+		Mouse.destroy();
 	}
 	
 	/**
