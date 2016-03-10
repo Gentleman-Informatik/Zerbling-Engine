@@ -116,6 +116,9 @@ public class MainComponent {
 				//Set delta time
 				Time.setDelta(frameTime);
 				
+				//Input update call
+				Input.update();
+				
 				//Game method call
 				this.game.input();
 				this.game.update();

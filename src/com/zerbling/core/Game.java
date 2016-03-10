@@ -8,6 +8,8 @@
  */
 package com.zerbling.core;
 
+import org.lwjgl.input.Keyboard;
+
 public class Game {
 
 	//JUST A SKELETON FOR THE MOMENT
@@ -19,6 +21,15 @@ public class Game {
 	
 	public void render() {}
 	
-	public void input() {}
+	public void input() {
+		
+		if(Input.getKeyDown(Keyboard.KEY_UP)) {
+			System.out.println("Pressed UP Key");
+		}
+		if(Input.getKeyUp(Keyboard.KEY_UP)) {
+			System.out.println("Released UP Key");
+		}
+		
+	}
 	
 }
