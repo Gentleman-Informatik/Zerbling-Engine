@@ -30,6 +30,15 @@ public class Game {
 			System.out.println("Released UP Key");
 		}
 		
+		if(Input.getMouseButtonDown(1)) {
+			System.out.println("Clicked right mouse");
+		}
+		if(Input.getMouseButtonUp(1)) {
+			System.out.println("Released right mous");
+		}
+		
+		//System.out.println("MousPos" + Input.getMousePosition().toString());
+		
 	}
 	
 }
