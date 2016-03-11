@@ -54,8 +54,104 @@ public class Vector3f {
 		
 	}
 	
+	/**
+	 * Returns the cross product of a vec3
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f cross(Vector3f v) {
+		
+		float x = this.y * v.getZ() - this.z * v.getY();
+		float y = this.z * v.getX() - this.x * v.getZ();
+		float z = this.x * v.getY() - this.y * v.getX();
+		
+		return new Vector3f(x, y, z); 
+		
+	}
+	
 	public Vector3f rotate() {
 		return null;
+	}
+	
+	/**
+	 * Adds to vectors
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f add(Vector3f v) {
+		return new Vector3f(this.x + v.getX(), this.y + v.getY(), this.z + v.getZ());
+	}
+	
+	/**
+	 * Adds to vectors by a single float
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f add(float v) {
+		return new Vector3f(this.x + v, this.y + v, this.z + v);
+	}
+	
+	/**
+	 * Subtracts to vectors
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f sub(Vector3f v) {
+		return new Vector3f(this.x - v.getX(), this.y - v.getY(), this.z - v.getZ());
+	}
+	
+	/**
+	 * Subtracts to vectors by a single float
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f sub(float v) {
+		return new Vector3f(this.x - v, this.y - v, this.z - v);
+	}
+	
+	/**
+	 * Divides to vectors
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f div(Vector3f v) {
+		return new Vector3f(this.x / v.getX(), this.y / v.getY(), this.z / v.getZ());
+	}
+	
+	/**
+	 * Divides to vectors by a single float
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f div(float v) {
+		return new Vector3f(this.x / v, this.y / v, this.z / v);
+	}
+	
+	/**
+	 * Multiplies to vectors
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f multi(Vector3f v) {
+		return new Vector3f(this.x * v.getX(), this.y * v.getY(), this.z * v.getZ());
+	}
+	
+	/**
+	 * Multiplies to vectors by a single float
+	 * 
+	 * @param v
+	 * @return vector3f
+	 */
+	public Vector3f multi(float v) {
+		return new Vector3f(this.x * v, this.y * v, this.z * v);
 	}
 	
 	/**
