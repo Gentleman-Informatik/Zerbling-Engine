@@ -26,6 +26,137 @@ public class Vector2f {
 	}
 	
 	/**
+	 * Returns the length of the vector
+	 * 
+	 * @return float
+	 */
+	public float length() {
+		return (float)Math.sqrt(this.x * this.x + this.y * this.y);
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param v
+	 * @return float
+	 */
+	public float dot(Vector2f v) {
+		return this.x * v.getX() + this.y + v.getY();
+	}
+	
+	/**
+	 * This method will normalize a vector
+	 * 
+	 * @return vector2f
+	 */
+	public Vector2f normalize() {
+		
+		float length = this.length();
+		this.x /= length;
+		this.y /= length;
+		
+		return this;
+		
+	}
+	
+	/**
+	 * Rotates a vector by given angel
+	 * 
+	 * @param angle
+	 * @return vector2f
+	 */
+	public Vector2f rotate(float angle) {
+		
+		double rad = Math.toRadians(angle);
+		double cos = Math.cos(rad);
+		double sin = Math.sin(rad);
+		
+		return new Vector2f((float)(x * cos - y * sin), (float)(x * sin + y * cos));
+		
+	}
+	
+	/**
+	 * Adds to vectors
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f add(Vector2f v) {
+		return new Vector2f(this.x + v.getX(), this.y + v.getY());
+	}
+	
+	/**
+	 * Adds to vectors by a single float
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f add(float v) {
+		return new Vector2f(this.x + v, this.y + v);
+	}
+	
+	/**
+	 * Subs the current vector from a other vector
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f sub(Vector2f v) {
+		return new Vector2f(this.x - v.getX(), this.y - v.getY());
+	}
+	
+	/**
+	 * Subs the current vector from a single float
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f sub(float v) {
+		return new Vector2f(this.x - v, this.y - v);
+	}
+	
+	/**
+	 * Divides the current vector from a other vector
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f div(Vector2f v) {
+		return new Vector2f(this.x / v.getX(), this.y / v.getY());
+	}
+	
+	/**
+	 * Divides the current vector from a single float
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f div(float v) {
+		return new Vector2f(this.x / v, this.y / v);
+	}
+	
+	/**
+	 * Multiplies the current vector from a other vector
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f multi(Vector2f v) {
+		return new Vector2f(this.x * v.getX(), this.y * v.getY());
+	}
+	
+	/**
+	 * Multiplies the current vector from a single float
+	 * 
+	 * @param v
+	 * @return vector2f
+	 */
+	public Vector2f multi(float v) {
+		return new Vector2f(this.x * v, this.y * v);
+	}
+	
+	
+	/**
 	 * A simple toString method for debug
 	 * 
 	 * @return String
@@ -71,7 +202,5 @@ public class Vector2f {
 	public void setY(float y) {
 		this.y = y;
 	}
-	
-	
 	
 }
